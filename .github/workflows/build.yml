@@ -151,17 +151,27 @@ jobs:
               flutter build macos --config-only --release --no-pub --suppress-analytics
               app="build/macos/Build/Products/Release/Media Format Converter.app"
               bin="$app/Contents/MacOS/Media Format Converter"
+              mkdir -p build/macos
               xcodebuild \
                 -workspace macos/Runner.xcworkspace \
                 -scheme Runner \
                 -configuration Release \
                 -destination 'generic/platform=macOS' \
+                -derivedDataPath build/macos \
+                -quiet \
+                OBJROOT="$PWD/build/macos/Build/Intermediates.noindex" \
+                SYMROOT="$PWD/build/macos/Build/Products" \
                 ARCHS='arm64 x86_64' \
                 ONLY_ACTIVE_ARCH=NO \
                 COMPILER_INDEX_STORE_ENABLE=NO \
                 CODE_SIGN_IDENTITY='' \
                 CODE_SIGNING_ALLOWED=NO \
                 CODE_SIGNING_REQUIRED=NO
+              if [ ! -f "$bin" ]; then
+                echo "macOS binary not found: $bin"
+                find build/macos -name 'Media Format Converter' -o -name '*.app' | head
+                exit 1
+              fi
               echo "Final architectures: $(lipo -archs "$bin")"
               if ! lipo -archs "$bin" | grep -q 'arm64' || ! lipo -archs "$bin" | grep -q 'x86_64'; then
                 echo "Expected a universal macOS binary"
@@ -262,7 +272,7 @@ jobs:
 
       - name: Upload artifact
         if: ${{ success() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.artifact }}
           path: dist/${{ matrix.artifact }}.${{ matrix.ext }}
@@ -270,7 +280,7 @@ jobs:
 
       - name: Upload ffmpeg bundle artifact
         if: ${{ success() && inputs.upload-release && matrix.platform == 'windows' && matrix.arch == 'x64' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ffmpeg_ui-bundle-windows-x64
           path: dist/ffmpeg_ui-bundle-windows-x64.zip
