@@ -25,24 +25,26 @@ jobs:
     if: ${{ inputs.run-checks }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    env:
+      FLUTTER_SUPPRESS_ANALYTICS: 'true'
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Set up Flutter
+      - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
 
       - name: Install Dart dependencies
-        run: flutter pub get
+        run: flutter pub get --suppress-analytics
 
       - name: Analyze
-        run: flutter analyze --fatal-infos
+        run: flutter analyze --fatal-infos --no-pub --suppress-analytics
 
       - name: Test
-        run: flutter test
+        run: flutter test --no-pub --suppress-analytics
 
   build:
     name: ${{ matrix.artifact }}
@@ -50,6 +52,8 @@ jobs:
     if: ${{ !cancelled() && (needs.checks.result == 'success' || needs.checks.result == 'skipped') }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 90
+    env:
+      FLUTTER_SUPPRESS_ANALYTICS: 'true'
     defaults:
       run:
         shell: bash
@@ -76,10 +80,37 @@ jobs:
             ext: zip
             source_path: 'build/macos/Build/Products/Release/Media Format Converter.app'
     steps:
+      - name: Reduce Windows antivirus overhead
+        if: ${{ runner.os == 'Windows' }}
+        continue-on-error: true
+        shell: powershell
+        run: |
+          $paths = @(
+            "${{ github.workspace }}",
+            "$env:RUNNER_TEMP",
+            "$env:RUNNER_TOOL_CACHE",
+            "$env:LOCALAPPDATA\Pub\Cache"
+          )
+          foreach ($path in $paths) {
+            Add-MpPreference -ExclusionPath $path -ErrorAction SilentlyContinue
+          }
+          Set-MpPreference -DisableRealtimeMonitoring $true -ErrorAction SilentlyContinue
+
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Set up Flutter
+      - name: Cache CocoaPods
+        if: ${{ matrix.platform == 'macos' }}
+        uses: actions/cache@v4
+        with:
+          path: |
+            macos/Pods
+            ~/Library/Caches/CocoaPods
+          key: cocoapods-${{ runner.os }}-${{ hashFiles('macos/Podfile', 'pubspec.lock') }}
+          restore-keys: |
+            cocoapods-${{ runner.os }}-
+
+      - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
@@ -100,7 +131,7 @@ jobs:
             libayatana-appindicator3-dev
 
       - name: Install Dart dependencies
-        run: flutter pub get
+        run: flutter pub get --suppress-analytics
 
       - name: Build
         env:
@@ -110,31 +141,32 @@ jobs:
           set -euo pipefail
           case "$PLATFORM" in
             windows)
-              flutter build windows --release
+              flutter build windows --release --no-pub --suppress-analytics
               ;;
             linux)
-              flutter build linux --release --target-platform "linux-${ARCH}"
+              flutter build linux --release --no-pub --suppress-analytics --target-platform "linux-${ARCH}"
               ;;
             macos)
-              flutter build macos --release
+              # 只生成配置，避免先编一遍 host arch 再编 universal。
+              flutter build macos --config-only --release --no-pub --suppress-analytics
               app="build/macos/Build/Products/Release/Media Format Converter.app"
               bin="$app/Contents/MacOS/Media Format Converter"
-              echo "Architectures after flutter build: $(lipo -archs "$bin")"
-              if ! lipo -archs "$bin" | grep -q 'arm64' || ! lipo -archs "$bin" | grep -q 'x86_64'; then
-                echo "Not universal, rebuilding with arm64 and x86_64..."
-                flutter build macos --config-only --release
-                xcodebuild \
-                  -workspace macos/Runner.xcworkspace \
-                  -scheme Runner \
-                  -configuration Release \
-                  -destination 'generic/platform=macOS' \
-                  ARCHS='arm64 x86_64' \
-                  ONLY_ACTIVE_ARCH=NO \
-                  CODE_SIGN_IDENTITY='' \
-                  CODE_SIGNING_ALLOWED=NO \
-                  CODE_SIGNING_REQUIRED=NO
-              fi
+              xcodebuild \
+                -workspace macos/Runner.xcworkspace \
+                -scheme Runner \
+                -configuration Release \
+                -destination 'generic/platform=macOS' \
+                ARCHS='arm64 x86_64' \
+                ONLY_ACTIVE_ARCH=NO \
+                COMPILER_INDEX_STORE_ENABLE=NO \
+                CODE_SIGN_IDENTITY='' \
+                CODE_SIGNING_ALLOWED=NO \
+                CODE_SIGNING_REQUIRED=NO
               echo "Final architectures: $(lipo -archs "$bin")"
+              if ! lipo -archs "$bin" | grep -q 'arm64' || ! lipo -archs "$bin" | grep -q 'x86_64'; then
+                echo "Expected a universal macOS binary"
+                exit 1
+              fi
               ;;
             *)
               echo "Unsupported platform: $PLATFORM"
