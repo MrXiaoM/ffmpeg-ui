@@ -1,0 +1,531 @@
+{
+  "@@locale": "en",
+  "appName": "Media Format Converter",
+  "language": "Language",
+  "languageHint": "The interface updates immediately.",
+  "languageSystem": "Follow system",
+  "about": "About",
+  "versionLabel": "Version {version}",
+  "@versionLabel": {
+    "placeholders": {
+      "version": {"type": "String"}
+    }
+  },
+  "aboutDescription": "A desktop media converter that wraps local FFmpeg.",
+  "close": "Close",
+  "ffmpegDocs": "FFmpeg docs",
+  "settings": "Settings",
+  "done": "Done",
+  "browse": "Browse",
+  "cancel": "Cancel",
+  "retry": "Retry",
+  "next": "Next",
+  "back": "Back",
+  "fileMenu": "File",
+  "aboutMenu": "About",
+  "openFile": "Open files",
+  "exit": "Exit",
+  "aboutThisApp": "About this app",
+  "addConversionTask": "Add conversion task",
+  "editConversionTask": "Edit conversion task",
+  "subtitles": "Subtitles",
+  "startAll": "Start all",
+  "stopAll": "Stop all",
+  "clearFinished": "Clear finished",
+  "ffmpegNotDetected": "ffmpeg was not found. Set its path in Settings first.",
+  "noMediaFiles": "No supported media files",
+  "dropMediaFiles": "Drop audio or video files.",
+  "ffmpegReadyStatus": "ffmpeg ready  ·  {label}",
+  "@ffmpegReadyStatus": {
+    "placeholders": {
+      "label": {"type": "String"}
+    }
+  },
+  "notReady": "Not ready",
+  "queueCount": "Queue {count}",
+  "@queueCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "runningCount": "Running {running}/{concurrency}",
+  "@runningCount": {
+    "placeholders": {
+      "running": {"type": "int"},
+      "concurrency": {"type": "int"}
+    }
+  },
+  "failedCount": "Failed {count}",
+  "@failedCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "convertToVideo": "Convert to video",
+  "convertToAudio": "Convert to audio",
+  "convertToFormat": "Convert to {format}",
+  "@convertToFormat": {
+    "placeholders": {
+      "format": {"type": "String"}
+    }
+  },
+  "queueEmpty": "The conversion queue is empty",
+  "queueEmptyHint": "Open files, drop media, or pick a format on the left to add a task.",
+  "sourcePath": "Source: {path}",
+  "@sourcePath": {
+    "placeholders": {
+      "path": {"type": "String"}
+    }
+  },
+  "destinationPath": "Destination: {path}",
+  "@destinationPath": {
+    "placeholders": {
+      "path": {"type": "String"}
+    }
+  },
+  "clipRangeLabel": "Clip {start} → {end}",
+  "@clipRangeLabel": {
+    "placeholders": {
+      "start": {"type": "String"},
+      "end": {"type": "String"}
+    }
+  },
+  "subtitleKeepAdd": "Subtitles: keep {kept} tracks, add {added}",
+  "@subtitleKeepAdd": {
+    "placeholders": {
+      "kept": {"type": "int"},
+      "added": {"type": "int"}
+    }
+  },
+  "openInputFolder": "Open input folder",
+  "openOutputFolder": "Open output folder",
+  "stop": "Stop",
+  "restart": "Restart",
+  "start": "Start",
+  "delete": "Delete",
+  "edit": "Edit",
+  "clip": "Clip",
+  "elapsed": "Elapsed {time}",
+  "@elapsed": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "remaining": "ETA {time}",
+  "@remaining": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "statusPending": "Not started",
+  "statusQueued": "Queued",
+  "statusRunning": "Converting",
+  "statusCompleted": "Completed",
+  "statusFailed": "Failed",
+  "statusCancelled": "Cancelled",
+  "ffmpegPath": "ffmpeg path",
+  "ffmpegPathHintWindows": "Leave empty to search the app folder first, then PATH and Program Files. Relative paths are resolved from the app folder and stored as entered.",
+  "ffmpegPathHintMacos": "Leave empty to search the app folder first, then PATH, Homebrew, and /usr/local/bin. Relative paths are resolved from the app folder and stored as entered.",
+  "ffmpegPathHintLinux": "Leave empty to search the app folder first, then PATH, /usr/bin, and ~/.local/bin. Relative paths are resolved from the app folder and stored as entered.",
+  "useThisPath": "Use this path",
+  "redetect": "Detect again",
+  "ready": "Ready",
+  "taskReady": "Ready",
+  "ffmpegNotFoundTitle": "ffmpeg not found",
+  "ffmpegMissingHintWindows": "Specify or detect a working ffmpeg.exe before converting.",
+  "ffmpegMissingHintOther": "Specify or detect a working ffmpeg before converting.",
+  "hardwareAcceleration": "Hardware acceleration",
+  "hardwareAccelerationHint": "When enabled, new conversion tasks use hardware acceleration by default. Existing tasks are unchanged.",
+  "hardwareDefaultOn": "On by default for new tasks",
+  "hardwareAfterGpu": "Applies to new tasks after a GPU is detected",
+  "concurrency": "Task concurrency",
+  "concurrencyHint": "How many ffmpeg processes can run at once. Higher values convert faster but use more CPU and disk.",
+  "renameOnConflict": "Auto-rename on conflict",
+  "renameHint": "Append a number when the output file already exists. {token} is the number; {padded} becomes 01.",
+  "@renameHint": {
+    "placeholders": {
+      "token": {"type": "String"},
+      "padded": {"type": "String"}
+    }
+  },
+  "renamePresetFile": "file{example}",
+  "@renamePresetFile": {
+    "placeholders": {
+      "example": {"type": "String"}
+    }
+  },
+  "useThisRule": "Use this rule",
+  "renameExample": "Example: video{example}",
+  "@renameExample": {
+    "placeholders": {
+      "example": {"type": "String"}
+    }
+  },
+  "pickMediaFiles": "Select media files",
+  "pickSubtitleFiles": "Select external subtitles",
+  "pickOutputDirectory": "Select output folder",
+  "pickFfmpegExe": "Select ffmpeg.exe",
+  "pickFfmpeg": "Select ffmpeg",
+  "clipTitle": "Clip  ·  {name}",
+  "@clipTitle": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "play": "Play",
+  "pause": "Pause",
+  "minusOneFrame": "-1 frame",
+  "plusOneFrame": "+1 frame",
+  "currentPosition": "Position {time}",
+  "@currentPosition": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "loadingPreview": "Loading preview…",
+  "clipPreviewUnavailable": "Video preview is temporarily unavailable.",
+  "inPoint": "In",
+  "outPoint": "Out",
+  "timecodeAndFrame": "{time}  ·  Frame {frame}",
+  "@timecodeAndFrame": {
+    "placeholders": {
+      "time": {"type": "String"},
+      "frame": {"type": "int"}
+    }
+  },
+  "useCurrentFrame": "Use current frame",
+  "clearClip": "Clear clip",
+  "applyClip": "Apply clip",
+  "clearSubtitles": "Clear subtitle changes",
+  "applySubtitles": "Apply subtitle changes",
+  "subtitleTaskLocked": "This task cannot be edited while it is running or already finished.",
+  "subtitleAudioUnsupported": "Audio tasks do not support embedded subtitles.",
+  "subtitleFormatUnsupported": "This output format does not support embedded subtitles.",
+  "cannotOpenPreview": "Cannot open preview: {error}",
+  "@cannotOpenPreview": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "selectFormat": "Target format",
+  "selectFormatPlaceholder": "Choose a target format",
+  "video": "Video",
+  "audio": "Audio",
+  "inputFiles": "Input files",
+  "inputFilePath": "Input file path",
+  "addFiles": "Add files",
+  "noFilesYet": "No files yet. Click Add, or drop them from the home screen.",
+  "reading": "Reading…",
+  "outputDirectory": "Output folder",
+  "outputFileName": "Output file name",
+  "outputFileNameExample": "e.g. {token}_converted",
+  "@outputFileNameExample": {
+    "placeholders": {
+      "token": {"type": "String"}
+    }
+  },
+  "outputFileNameHint": "Use {token} for the original file name. Conflicts still follow the rename setting.",
+  "@outputFileNameHint": {
+    "placeholders": {
+      "token": {"type": "String"}
+    }
+  },
+  "outputNamePreviewTitle": "Converted file names",
+  "outputNamePreviewEmpty": "Add files to preview converted names.",
+  "outputNamePreviewOriginal": "Original name",
+  "outputNamePreviewConverted": "Converted name",
+  "picture": "Picture",
+  "output": "Output",
+  "noPictureProcessing": "This target does not reprocess the picture.",
+  "copyVideoKeepCopy": "Video stays stream-copied until you change picture or encoder options.",
+  "copyVideoWillReencode": "Changing picture or video options re-encodes the video. Audio stays copied unless you change it.",
+  "copyVideoEncoderLocked": "Auto follows the source video codec; you can also pick another encoder.",
+  "copyVideoUnknownCodec": "Unknown source codec ({codec}). Scaling is unavailable until the codec is recognized.",
+  "@copyVideoUnknownCodec": {
+    "placeholders": {
+      "codec": {"type": "String"}
+    }
+  },
+  "copyAudioKeepCopy": "Audio stays stream-copied until you change audio options.",
+  "copyAudioWillReencode": "Changing audio options re-encodes audio. Video stays copied unless you change the picture.",
+  "copyAudioEncoderLocked": "The audio codec stays locked to the source codec.",
+  "copyAudioUnknownCodec": "Unknown source audio codec ({codec}). Audio processing is unavailable until the codec is recognized.",
+  "@copyAudioUnknownCodec": {
+    "placeholders": {
+      "codec": {"type": "String"}
+    }
+  },
+  "resolutionPreset": "Resolution preset",
+  "keepAspectRatio": "Keep aspect ratio",
+  "scaleAlgorithm": "Scaling algorithm",
+  "rotation": "Rotation",
+  "deinterlace": "Deinterlace",
+  "flipHorizontal": "Flip horizontally",
+  "flipVertical": "Flip vertically",
+  "noVideoReencode": "This target does not re-encode video.",
+  "fixedEncoder": "This format uses a fixed encoder.",
+  "defaultFps15": "Default 15",
+  "hardwareAccel": "Hardware acceleration",
+  "hardwareAccelOnHint": "When on, the GPU is used automatically for decode, filters, and encode.",
+  "noGpuEncoder": "No usable GPU encoder was detected.",
+  "encoder": "Encoder",
+  "hardwarePicksEncoder": "The GPU encoder is chosen automatically while hardware acceleration is on.",
+  "speed": "Speed",
+  "contentTune": "Tune",
+  "auto": "Auto",
+  "pixelFormat": "Pixel format",
+  "encoder8bitOnly": "This encoder uses 8-bit only.",
+  "rateControl": "Rate control",
+  "maxBitrateKbps": "Max bitrate kbps",
+  "bufsizeKbps": "Buffer kbps",
+  "fpsMode": "Frame rate mode",
+  "keyframeInterval": "Keyframe interval",
+  "copyAudioNoProcess": "Copy mode does not reprocess audio.",
+  "audioControl": "Audio control",
+  "audioBitrateKbps": "Audio bitrate kbps",
+  "optionalHint": "Optional",
+  "amrFixed": "AMR is fixed at 8000 Hz, mono, 12.2 kbps.",
+  "mp3Quality": "MP3 quality 0-9",
+  "aacQuality": "AAC quality 1-5",
+  "flacCompression": "FLAC compression 0-12",
+  "opusRateMode": "Opus rate mode",
+  "opusApplicationField": "Opus application",
+  "sampleRate": "Sample rate",
+  "followSource": "Follow source",
+  "sampleRateNote": "Unsupported sample rates are adjusted to the nearest value.",
+  "channels": "Channels",
+  "mono": "Mono",
+  "stereo": "Stereo",
+  "volumeDb": "Volume (dB)",
+  "loudnessSkipsVolume": "Volume is not applied while loudness normalization is on.",
+  "loudnessNormalize": "Loudness normalization",
+  "fastStart": "Optimize for streaming (faststart)",
+  "keepMetadata": "Keep metadata",
+  "keepChapters": "Keep chapters",
+  "metadataTitle": "Title",
+  "metadataArtist": "Artist",
+  "metadataAlbum": "Album",
+  "metadataYear": "Year",
+  "metadataComment": "Comment",
+  "qualityPreset": "Quality preset",
+  "custom": "Custom",
+  "videoBitrateKbps": "Video bitrate kbps",
+  "required": "Required",
+  "frameRate": "Frame rate",
+  "width": "Width",
+  "height": "Height",
+  "detectingGpu": "Detecting GPU encoders…",
+  "noGpuDetected": "No usable GPU detected",
+  "usingGpus": "Using {names}",
+  "@usingGpus": {
+    "placeholders": {
+      "names": {"type": "String"}
+    }
+  },
+  "listSeparator": ", ",
+  "addToQueue": "Add to queue",
+  "saveTask": "Save task",
+  "wizardStepFormat": "1. Choose format",
+  "wizardStepParams": "2. Files and options",
+  "unknownResolution": "Unknown resolution",
+  "unknownDuration": "Unknown duration",
+  "formatCopyCodec": "Copy",
+  "formatDescCopyVideo": "Keep the source container. Defaults to the source codec, with full options; unchanged streams stay copied",
+  "formatDescCopyAudio": "Keep the source container. Defaults to the source codec, with full options; unchanged streams stay copied",
+  "formatDescMp4": "General-purpose video with the widest compatibility",
+  "formatDescMkv": "Open container for high-quality muxing",
+  "formatDescWebm": "Web video with smaller files",
+  "formatDescMov": "Common in the Apple ecosystem",
+  "formatDescAvi": "Legacy video container",
+  "formatDescGif": "Animated image for short clips",
+  "formatDescWmv": "Windows Media video",
+  "formatDescFlv": "Flash video container",
+  "formatDescMpeg": "MPEG program stream",
+  "formatDescTs": "MPEG transport stream",
+  "formatDescM2ts": "Blu-ray transport stream",
+  "formatDesc3gp": "Common mobile video",
+  "formatDescOgv": "Open Theora video",
+  "formatDescWebp": "Animated WebP image",
+  "formatDescMp3": "General-purpose lossy audio",
+  "formatDescAac": "Efficient lossy audio",
+  "formatDescM4a": "AAC audio container",
+  "formatDescWav": "Uncompressed PCM audio",
+  "formatDescFlac": "Lossless compressed audio",
+  "formatDescOgg": "Open Vorbis audio",
+  "formatDescOpus": "Low-latency efficient audio",
+  "formatDescAc3": "Dolby Digital surround",
+  "formatDescWma": "Windows Media audio",
+  "formatDescAiff": "Apple uncompressed PCM",
+  "formatDescMp2": "MPEG Audio Layer 2",
+  "formatDescWv": "WavPack lossless audio",
+  "formatDescTta": "True Audio lossless",
+  "formatDescSpx": "Speex speech codec",
+  "formatDescAmr": "Narrowband speech audio",
+  "formatDescAlac": "Apple lossless audio",
+  "formatDescCaf": "Apple Core Audio",
+  "presetOriginal": "Original",
+  "preset1080p": "1080p",
+  "preset720p": "720p",
+  "preset480p": "480p",
+  "qualitySmaller": "Smaller file",
+  "qualityStandard": "Default",
+  "qualityHigher": "Higher quality",
+  "encoderH264Software": "H.264 software",
+  "encoderH265Software": "H.265 software",
+  "encoderH264Nvidia": "H.264 NVIDIA",
+  "encoderH265Nvidia": "H.265 NVIDIA",
+  "encoderH264Amd": "H.264 AMD",
+  "encoderH265Amd": "H.265 AMD",
+  "encoderH264Intel": "H.264 Intel",
+  "encoderH265Intel": "H.265 Intel",
+  "encoderH264Vaapi": "H.264 VAAPI",
+  "encoderH265Vaapi": "H.265 VAAPI",
+  "encoderH264Videotoolbox": "H.264 VideoToolbox",
+  "encoderH265Videotoolbox": "H.265 VideoToolbox",
+  "encoderVp9": "VP9",
+  "encoderAv1": "AV1",
+  "rateQuality": "Quality",
+  "rateVbr": "Variable bitrate",
+  "rateCbr": "Constant bitrate",
+  "speedFastest": "Fastest",
+  "speedFaster": "Faster",
+  "speedFast": "Fast",
+  "speedMedium": "Balanced",
+  "speedSlow": "Slow",
+  "speedSlower": "Slower",
+  "speedSlowest": "Slowest",
+  "tuneFilm": "Film",
+  "tuneAnimation": "Animation",
+  "tuneGrain": "Preserve grain",
+  "tuneStillImage": "Still image",
+  "tuneFastDecode": "Easy to decode",
+  "tuneZeroLatency": "Low latency",
+  "pixelYuv420p": "8-bit 4:2:0",
+  "pixelYuv420p10": "10-bit 4:2:0",
+  "scaleBilinear": "Bilinear",
+  "scaleBicubic": "Bicubic",
+  "scaleLanczos": "Lanczos",
+  "deinterlaceOff": "Off",
+  "deinterlaceYadif": "Deinterlace",
+  "deinterlaceYadifDouble": "Deinterlace and double rate",
+  "rotationNone": "No rotation",
+  "rotationClockwise": "90° clockwise",
+  "rotationHalf": "180°",
+  "rotationCounterClockwise": "90° counterclockwise",
+  "fpsCfr": "Constant frame rate",
+  "fpsVfr": "Variable frame rate",
+  "keyframeOneSecond": "1 second",
+  "keyframeTwoSeconds": "2 seconds",
+  "keyframeFiveSeconds": "5 seconds",
+  "keyframeTenSeconds": "10 seconds",
+  "audioRateQuality": "Quality",
+  "audioRateBitrate": "Bitrate",
+  "opusApplicationAudio": "Music",
+  "opusApplicationVoip": "Speech",
+  "opusApplicationLowdelay": "Low latency",
+  "opusVbrOn": "Variable bitrate",
+  "opusVbrConstrained": "Constrained VBR",
+  "opusVbrOff": "Constant bitrate",
+  "subtitleNoVideo": "This file has no video stream, so subtitles cannot be edited.",
+  "subtitleNeedOutput": "Enter an output folder and file name.",
+  "existingSubtitles": "Existing subtitles",
+  "readingSubtitleTracks": "Reading subtitle tracks...",
+  "noEmbeddedSubtitles": "No embedded subtitles.",
+  "externalSubtitles": "External subtitles to add",
+  "addExternalSubtitle": "Add external subtitles",
+  "subtitleLanguageHint": "Language, e.g. chi",
+  "subtitleTitleHint": "Title",
+  "subtitleOutputHint": "Uncheck a track to remove it. Subtitles are written into the current task output.",
+  "container": "Container",
+  "webmSubtitleWarning": "WebM keeps WebVTT text subtitles only; styling is lost.",
+  "mp4AssWarning": "MP4/MOV cannot keep ASS styling. Saving as MKV is recommended.",
+  "mp4TextWarning": "MP4/MOV converts text subtitles to mov_text, so styling is lost.",
+  "trackIndex": "Track {index}",
+  "@trackIndex": {
+    "placeholders": {
+      "index": {"type": "int"}
+    }
+  },
+  "subtitleDefault": "Default",
+  "subtitleForced": "Forced",
+  "subtitleDeleteOnly": "Can only be removed",
+  "errorFfmpegNotFound": "ffmpeg was not found",
+  "errorFfmpegNotFoundSpecify": "ffmpeg was not found. Set its path in Settings.",
+  "errorFfmpegFoundFrom": "Found ffmpeg from {source}",
+  "@errorFfmpegFoundFrom": {
+    "placeholders": {
+      "source": {"type": "String"}
+    }
+  },
+  "errorFfmpegInvalidPath": "That path is invalid and cannot run ffmpeg",
+  "errorFfmpegUsingSpecified": "Using the specified ffmpeg",
+  "errorCancelled": "Cancelled",
+  "errorConversionFailed": "Conversion failed",
+  "errorCannotStartFfmpeg": "Cannot start ffmpeg: {error}",
+  "@errorCannotStartFfmpeg": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "errorFfmpegExitCode": "ffmpeg exit code {code}",
+  "@errorFfmpegExitCode": {
+    "placeholders": {
+      "code": {"type": "int"}
+    }
+  },
+  "errorFfprobeNotFound": "ffprobe was not found",
+  "errorCannotReadMedia": "Cannot read media info",
+  "errorEncoderInitFailed": "Encoder initialization failed",
+  "errorEncoderUnsupported": "This system does not support {vendor} encoders",
+  "@errorEncoderUnsupported": {
+    "placeholders": {
+      "vendor": {"type": "String"}
+    }
+  },
+  "errorEncoderNotCompiled": "This ffmpeg build does not include {vendor} encoders",
+  "@errorEncoderNotCompiled": {
+    "placeholders": {
+      "vendor": {"type": "String"}
+    }
+  },
+  "errorEncoderCheckFailed": "Could not check {vendor} encoders: {error}",
+  "@errorEncoderCheckFailed": {
+    "placeholders": {
+      "vendor": {"type": "String"},
+      "error": {"type": "String"}
+    }
+  },
+  "errorEncoderCanInit": "{vendor} encoder can initialize",
+  "errorUnsupportedSourceVideoCodec": "Cannot re-encode with the source video codec ({codec})",
+  "@errorUnsupportedSourceVideoCodec": {
+    "placeholders": {
+      "codec": {"type": "String"}
+    }
+  },
+  "errorUnsupportedSourceAudioCodec": "Cannot re-encode with the source audio codec ({codec})",
+  "@errorUnsupportedSourceAudioCodec": {
+    "placeholders": {
+      "codec": {"type": "String"}
+    }
+  },
+  "@errorEncoderCanInit": {
+    "placeholders": {
+      "vendor": {"type": "String"}
+    }
+  },
+  "ffmpegSourceSettingsPath": "the path set in Settings",
+  "ffmpegSourceManual": "a manually chosen path",
+  "ffmpegSourceSystemPath": "system PATH",
+  "ffmpegSourceAppDirFfmpeg": "app folder ffmpeg",
+  "ffmpegSourceAppDirFfmpegBin": "app folder ffmpeg/bin",
+  "ffmpegSourceAppDirBin": "app folder bin",
+  "ffmpegSourceAppDir": "the app folder",
+  "crfFollowsQuality": "CRF (empty uses the quality preset)",
+  "lockedMobileProfile": "FLV and 3GP always use Baseline / Level 3.0.",
+  "channelCount": "{count} channels",
+  "@channelCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  }
+}

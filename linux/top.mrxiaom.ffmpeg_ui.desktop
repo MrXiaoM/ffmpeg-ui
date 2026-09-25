@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Media Format Converter
+Name[zh_CN]=媒体格式转换器
+Name[zh]=媒体格式转换器
+Name[zh_HK]=媒體格式轉換器
+Name[zh_TW]=媒體格式轉換器
+Comment=Desktop media format converter powered by ffmpeg
+Comment[zh_CN]=基于 ffmpeg 的桌面媒体格式转换器
+Comment[zh]=基于 ffmpeg 的桌面媒体格式转换器
+Comment[zh_HK]=基於 ffmpeg 的桌面媒體格式轉換器
+Comment[zh_TW]=基於 ffmpeg 的桌面媒體格式轉換器
+Exec=ffmpeg_ui
+Icon=ffmpeg_ui
+Terminal=false
+Categories=AudioVideo;Audio;Video;
+StartupWMClass=ffmpeg_ui

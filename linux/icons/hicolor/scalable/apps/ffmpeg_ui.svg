@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Play">
+  <defs>
+    <linearGradient id="disc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2B3444"/>
+      <stop offset="100%" stop-color="#151B26"/>
+    </linearGradient>
+    <linearGradient id="play" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#67E8F9"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="236" fill="url(#disc)"/>
+  <path d="M 177.33 144.00 Q 177.33 110.00 206.25 127.89 L 384.42 238.11 Q 413.33 256.00 384.42 273.89 L 206.25 384.11 Q 177.33 402.00 177.33 368.00 Z" fill="url(#play)"/>
+</svg>

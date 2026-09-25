@@ -1,0 +1,531 @@
+{
+  "@@locale": "zh_CN",
+  "appName": "媒体格式转换器",
+  "language": "语言",
+  "languageHint": "切换后立即生效。",
+  "languageSystem": "跟随系统",
+  "about": "关于",
+  "versionLabel": "版本 {version}",
+  "@versionLabel": {
+    "placeholders": {
+      "version": {"type": "String"}
+    }
+  },
+  "aboutDescription": "套壳本地 FFmpeg 的桌面媒体格式转换器。",
+  "close": "关闭",
+  "ffmpegDocs": "FFmpeg 文档",
+  "settings": "设置",
+  "done": "完成",
+  "browse": "浏览",
+  "cancel": "取消",
+  "retry": "重试",
+  "next": "下一步",
+  "back": "上一步",
+  "fileMenu": "文件",
+  "aboutMenu": "关于",
+  "openFile": "打开文件",
+  "exit": "退出",
+  "aboutThisApp": "关于本软件",
+  "addConversionTask": "添加转换任务",
+  "editConversionTask": "编辑转换任务",
+  "subtitles": "字幕",
+  "startAll": "开始全部",
+  "stopAll": "停止全部",
+  "clearFinished": "清空已完成",
+  "ffmpegNotDetected": "未检测到 ffmpeg，请先到设置中指定路径",
+  "noMediaFiles": "没有可用的媒体文件",
+  "dropMediaFiles": "请拖入音视频文件。",
+  "ffmpegReadyStatus": "ffmpeg 已就绪  ·  {label}",
+  "@ffmpegReadyStatus": {
+    "placeholders": {
+      "label": {"type": "String"}
+    }
+  },
+  "notReady": "未就绪",
+  "queueCount": "队列 {count}",
+  "@queueCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "runningCount": "进行中 {running}/{concurrency}",
+  "@runningCount": {
+    "placeholders": {
+      "running": {"type": "int"},
+      "concurrency": {"type": "int"}
+    }
+  },
+  "failedCount": "失败 {count}",
+  "@failedCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "convertToVideo": "转换为视频",
+  "convertToAudio": "转换为音频",
+  "convertToFormat": "转换为 {format}",
+  "@convertToFormat": {
+    "placeholders": {
+      "format": {"type": "String"}
+    }
+  },
+  "queueEmpty": "转换队列是空的",
+  "queueEmptyHint": "打开文件、拖入媒体，或点击左侧格式开始添加任务。",
+  "sourcePath": "源：{path}",
+  "@sourcePath": {
+    "placeholders": {
+      "path": {"type": "String"}
+    }
+  },
+  "destinationPath": "目标：{path}",
+  "@destinationPath": {
+    "placeholders": {
+      "path": {"type": "String"}
+    }
+  },
+  "clipRangeLabel": "剪辑 {start} → {end}",
+  "@clipRangeLabel": {
+    "placeholders": {
+      "start": {"type": "String"},
+      "end": {"type": "String"}
+    }
+  },
+  "subtitleKeepAdd": "字幕：保留 {kept} 轨，添加 {added} 条",
+  "@subtitleKeepAdd": {
+    "placeholders": {
+      "kept": {"type": "int"},
+      "added": {"type": "int"}
+    }
+  },
+  "openInputFolder": "打开输入文件所在目录",
+  "openOutputFolder": "打开输出目录",
+  "stop": "停止",
+  "restart": "重新开始",
+  "start": "开始",
+  "delete": "删除",
+  "edit": "编辑",
+  "clip": "剪辑",
+  "elapsed": "已用 {time}",
+  "@elapsed": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "remaining": "剩余 {time}",
+  "@remaining": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "statusPending": "未开始",
+  "statusQueued": "排队中",
+  "statusRunning": "转换中",
+  "statusCompleted": "已完成",
+  "statusFailed": "失败",
+  "statusCancelled": "已取消",
+  "ffmpegPath": "ffmpeg 路径",
+  "ffmpegPathHintWindows": "留空则先找程序目录下的 ffmpeg，再找 PATH 和 Program Files。相对路径按程序目录解析，并按输入原样保存。",
+  "ffmpegPathHintMacos": "留空则先找程序目录下的 ffmpeg，再找 PATH、Homebrew 和 /usr/local/bin。相对路径按程序目录解析，并按输入原样保存。",
+  "ffmpegPathHintLinux": "留空则先找程序目录下的 ffmpeg，再找 PATH、/usr/bin 和 ~/.local/bin。相对路径按程序目录解析，并按输入原样保存。",
+  "useThisPath": "使用此路径",
+  "redetect": "重新探测",
+  "ready": "已就绪",
+  "taskReady": "准备就绪",
+  "ffmpegNotFoundTitle": "未找到 ffmpeg",
+  "ffmpegMissingHintWindows": "转换前需要先指定或探测到可用的 ffmpeg.exe。",
+  "ffmpegMissingHintOther": "转换前需要先指定或探测到可用的 ffmpeg。",
+  "hardwareAcceleration": "硬件加速",
+  "hardwareAccelerationHint": "打开后，新建转换任务会默认使用硬件加速。已添加的任务不会改变。",
+  "hardwareDefaultOn": "新建任务默认开启",
+  "hardwareAfterGpu": "检测到 GPU 后对新任务生效",
+  "concurrency": "任务并发数",
+  "concurrencyHint": "同时运行的 ffmpeg 进程数量。数值越大转换越快，也更容易打满 CPU 和磁盘。",
+  "renameOnConflict": "重名自动重命名",
+  "renameHint": "输出文件已存在时追加序号。{token} 是序号，{padded} 会补成 01。",
+  "@renameHint": {
+    "placeholders": {
+      "token": {"type": "String"},
+      "padded": {"type": "String"}
+    }
+  },
+  "renamePresetFile": "文件{example}",
+  "@renamePresetFile": {
+    "placeholders": {
+      "example": {"type": "String"}
+    }
+  },
+  "useThisRule": "使用此规则",
+  "renameExample": "示例：video{example}",
+  "@renameExample": {
+    "placeholders": {
+      "example": {"type": "String"}
+    }
+  },
+  "pickMediaFiles": "选择媒体文件",
+  "pickSubtitleFiles": "选择外挂字幕",
+  "pickOutputDirectory": "选择输出目录",
+  "pickFfmpegExe": "选择 ffmpeg.exe",
+  "pickFfmpeg": "选择 ffmpeg",
+  "clipTitle": "剪辑  ·  {name}",
+  "@clipTitle": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "play": "播放",
+  "pause": "暂停",
+  "minusOneFrame": "-1 帧",
+  "plusOneFrame": "+1 帧",
+  "currentPosition": "当前位置 {time}",
+  "@currentPosition": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+  "loadingPreview": "正在加载预览…",
+  "clipPreviewUnavailable": "视频预览暂不可用。",
+  "inPoint": "入点",
+  "outPoint": "出点",
+  "timecodeAndFrame": "{time}  ·  第 {frame} 帧",
+  "@timecodeAndFrame": {
+    "placeholders": {
+      "time": {"type": "String"},
+      "frame": {"type": "int"}
+    }
+  },
+  "useCurrentFrame": "用当前帧",
+  "clearClip": "清除剪辑",
+  "applyClip": "应用剪辑",
+  "clearSubtitles": "清除字幕更改",
+  "applySubtitles": "应用字幕更改",
+  "subtitleTaskLocked": "进行中或已完成的任务不能编辑字幕。",
+  "subtitleAudioUnsupported": "音频任务不支持内嵌字幕。",
+  "subtitleFormatUnsupported": "当前输出格式不支持内嵌字幕。",
+  "cannotOpenPreview": "无法打开预览：{error}",
+  "@cannotOpenPreview": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "selectFormat": "目标格式",
+  "selectFormatPlaceholder": "选择要转换到的格式",
+  "video": "视频",
+  "audio": "音频",
+  "inputFiles": "输入文件",
+  "inputFilePath": "输入文件路径",
+  "addFiles": "添加文件",
+  "noFilesYet": "还没有文件。点击添加，或从首页拖入。",
+  "reading": "读取中…",
+  "outputDirectory": "输出目录",
+  "outputFileName": "输出文件名",
+  "outputFileNameExample": "例如 {token}_converted",
+  "@outputFileNameExample": {
+    "placeholders": {
+      "token": {"type": "String"}
+    }
+  },
+  "outputFileNameHint": "用 {token} 表示原文件名。重名仍会按设置追加序号。",
+  "@outputFileNameHint": {
+    "placeholders": {
+      "token": {"type": "String"}
+    }
+  },
+  "outputNamePreviewTitle": "转换后的文件名",
+  "outputNamePreviewEmpty": "先添加文件才能预览转换后的名称。",
+  "outputNamePreviewOriginal": "原文件名",
+  "outputNamePreviewConverted": "转换后",
+  "picture": "画面",
+  "output": "输出",
+  "noPictureProcessing": "当前目标不重新处理画面。",
+  "copyVideoKeepCopy": "未改画面或视频参数时，视频仍直接复制。",
+  "copyVideoWillReencode": "改了画面或视频参数后会重压视频；音频默认仍复制。",
+  "copyVideoEncoderLocked": "自动时跟随源视频编码，也可以改成其他编码器。",
+  "copyVideoUnknownCodec": "无法识别源视频编码（{codec}），缩放前需要能识别的编码。",
+  "@copyVideoUnknownCodec": {
+    "placeholders": {
+      "codec": {"type": "String"}
+    }
+  },
+  "copyAudioKeepCopy": "未改音频参数时，音频仍直接复制。",
+  "copyAudioWillReencode": "改了音频选项后会重压音频；视频默认仍复制。",
+  "copyAudioEncoderLocked": "音频编码锁定为源音频编码。",
+  "copyAudioUnknownCodec": "无法识别源音频编码（{codec}），处理音频前需要能识别的编码。",
+  "@copyAudioUnknownCodec": {
+    "placeholders": {
+      "codec": {"type": "String"}
+    }
+  },
+  "resolutionPreset": "分辨率预设",
+  "keepAspectRatio": "保持等比缩放",
+  "scaleAlgorithm": "缩放算法",
+  "rotation": "旋转",
+  "deinterlace": "去隔行",
+  "flipHorizontal": "水平翻转",
+  "flipVertical": "垂直翻转",
+  "noVideoReencode": "当前目标不重新编码视频。",
+  "fixedEncoder": "此格式使用固定编码器。",
+  "defaultFps15": "默认 15",
+  "hardwareAccel": "硬件加速",
+  "hardwareAccelOnHint": "打开后自动使用本机 GPU 完成解码、画面处理和编码。",
+  "noGpuEncoder": "没有探测到可用的 GPU 编码器。",
+  "encoder": "编码器",
+  "hardwarePicksEncoder": "硬件加速打开时自动选择 GPU 编码器。",
+  "speed": "速度",
+  "contentTune": "内容优化",
+  "auto": "自动",
+  "pixelFormat": "像素格式",
+  "encoder8bitOnly": "当前编码器只使用 8-bit。",
+  "rateControl": "码率控制",
+  "maxBitrateKbps": "最大码率 kbps",
+  "bufsizeKbps": "缓冲 kbps",
+  "fpsMode": "帧率模式",
+  "keyframeInterval": "关键帧间隔",
+  "copyAudioNoProcess": "原编码不会重新处理音频。",
+  "audioControl": "音频控制",
+  "audioBitrateKbps": "音频码率 kbps",
+  "optionalHint": "可空",
+  "amrFixed": "AMR 固定为 8000 Hz、单声道、12.2 kbps。",
+  "mp3Quality": "MP3 质量 0-9",
+  "aacQuality": "AAC 质量 1-5",
+  "flacCompression": "FLAC 压缩 0-12",
+  "opusRateMode": "Opus 码率模式",
+  "opusApplicationField": "Opus 用途",
+  "sampleRate": "采样率",
+  "followSource": "跟随源",
+  "sampleRateNote": "不支持的采样率会自动就近调整。",
+  "channels": "声道",
+  "mono": "单声道",
+  "stereo": "立体声",
+  "volumeDb": "音量（dB）",
+  "loudnessSkipsVolume": "响度标准化开启时不再叠加音量。",
+  "loudnessNormalize": "响度标准化",
+  "fastStart": "优化网络播放（faststart）",
+  "keepMetadata": "保留元数据",
+  "keepChapters": "保留章节",
+  "metadataTitle": "标题",
+  "metadataArtist": "艺术家",
+  "metadataAlbum": "专辑",
+  "metadataYear": "年份",
+  "metadataComment": "注释",
+  "qualityPreset": "质量档",
+  "custom": "自定义",
+  "videoBitrateKbps": "视频码率 kbps",
+  "required": "必填",
+  "frameRate": "帧率",
+  "width": "宽度",
+  "height": "高度",
+  "detectingGpu": "正在检测 GPU 编码器…",
+  "noGpuDetected": "未检测到可用 GPU",
+  "usingGpus": "使用 {names}",
+  "@usingGpus": {
+    "placeholders": {
+      "names": {"type": "String"}
+    }
+  },
+  "listSeparator": "、",
+  "addToQueue": "添加到队列",
+  "saveTask": "保存任务",
+  "wizardStepFormat": "1. 选择格式",
+  "wizardStepParams": "2. 参数与文件",
+  "unknownResolution": "未知分辨率",
+  "unknownDuration": "未知时长",
+  "formatCopyCodec": "原编码",
+  "formatDescCopyVideo": "保持原容器，默认源编码，可改参数；未改动时直接复制",
+  "formatDescCopyAudio": "保持原容器，默认源编码，可改参数；未改动时直接复制",
+  "formatDescMp4": "通用视频，兼容性最好",
+  "formatDescMkv": "开放容器，适合高质量封装",
+  "formatDescWebm": "网页视频，体积更小",
+  "formatDescMov": "Apple 生态常用视频",
+  "formatDescAvi": "传统视频容器",
+  "formatDescGif": "动画图片，适合短片段",
+  "formatDescWmv": "Windows Media 视频",
+  "formatDescFlv": "Flash 视频容器",
+  "formatDescMpeg": "MPEG 节目流",
+  "formatDescTs": "MPEG 传输流",
+  "formatDescM2ts": "蓝光传输流",
+  "formatDesc3gp": "手机常用视频",
+  "formatDescOgv": "Theora 开放视频",
+  "formatDescWebp": "动画 WebP 图片",
+  "formatDescMp3": "通用有损音频",
+  "formatDescAac": "高效有损音频",
+  "formatDescM4a": "AAC 音频封装",
+  "formatDescWav": "无损 PCM 音频",
+  "formatDescFlac": "无损压缩音频",
+  "formatDescOgg": "Vorbis 开放音频",
+  "formatDescOpus": "低延迟高效音频",
+  "formatDescAc3": "杜比数字环绕声",
+  "formatDescWma": "Windows Media 音频",
+  "formatDescAiff": "Apple 无损 PCM",
+  "formatDescMp2": "MPEG 音频层 2",
+  "formatDescWv": "WavPack 无损音频",
+  "formatDescTta": "True Audio 无损",
+  "formatDescSpx": "Speex 语音编码",
+  "formatDescAmr": "窄带语音音频",
+  "formatDescAlac": "Apple 无损音频",
+  "formatDescCaf": "Apple Core Audio",
+  "presetOriginal": "原画",
+  "preset1080p": "1080p",
+  "preset720p": "720p",
+  "preset480p": "480p",
+  "qualitySmaller": "更小体积",
+  "qualityStandard": "默认",
+  "qualityHigher": "更高画质",
+  "encoderH264Software": "H.264 软件",
+  "encoderH265Software": "H.265 软件",
+  "encoderH264Nvidia": "H.264 NVIDIA",
+  "encoderH265Nvidia": "H.265 NVIDIA",
+  "encoderH264Amd": "H.264 AMD",
+  "encoderH265Amd": "H.265 AMD",
+  "encoderH264Intel": "H.264 Intel",
+  "encoderH265Intel": "H.265 Intel",
+  "encoderH264Vaapi": "H.264 VAAPI",
+  "encoderH265Vaapi": "H.265 VAAPI",
+  "encoderH264Videotoolbox": "H.264 VideoToolbox",
+  "encoderH265Videotoolbox": "H.265 VideoToolbox",
+  "encoderVp9": "VP9",
+  "encoderAv1": "AV1",
+  "rateQuality": "质量",
+  "rateVbr": "动态码率",
+  "rateCbr": "固定码率",
+  "speedFastest": "极快",
+  "speedFaster": "更快",
+  "speedFast": "快",
+  "speedMedium": "均衡",
+  "speedSlow": "慢",
+  "speedSlower": "更慢",
+  "speedSlowest": "极慢",
+  "tuneFilm": "电影",
+  "tuneAnimation": "动画",
+  "tuneGrain": "保留颗粒",
+  "tuneStillImage": "静态画面",
+  "tuneFastDecode": "便于解码",
+  "tuneZeroLatency": "低延迟",
+  "pixelYuv420p": "8-bit 4:2:0",
+  "pixelYuv420p10": "10-bit 4:2:0",
+  "scaleBilinear": "双线性",
+  "scaleBicubic": "双三次",
+  "scaleLanczos": "Lanczos",
+  "deinterlaceOff": "关闭",
+  "deinterlaceYadif": "去隔行",
+  "deinterlaceYadifDouble": "去隔行并补帧",
+  "rotationNone": "不旋转",
+  "rotationClockwise": "顺时针 90°",
+  "rotationHalf": "180°",
+  "rotationCounterClockwise": "逆时针 90°",
+  "fpsCfr": "固定帧率",
+  "fpsVfr": "可变帧率",
+  "keyframeOneSecond": "1 秒",
+  "keyframeTwoSeconds": "2 秒",
+  "keyframeFiveSeconds": "5 秒",
+  "keyframeTenSeconds": "10 秒",
+  "audioRateQuality": "质量",
+  "audioRateBitrate": "码率",
+  "opusApplicationAudio": "音乐",
+  "opusApplicationVoip": "语音",
+  "opusApplicationLowdelay": "低延迟",
+  "opusVbrOn": "动态码率",
+  "opusVbrConstrained": "受约束动态码率",
+  "opusVbrOff": "固定码率",
+  "subtitleNoVideo": "这个文件没有视频流，不能编辑字幕。",
+  "subtitleNeedOutput": "请填写输出目录和文件名。",
+  "existingSubtitles": "已有字幕",
+  "readingSubtitleTracks": "正在读取字幕轨...",
+  "noEmbeddedSubtitles": "没有内嵌字幕。",
+  "externalSubtitles": "要添加的外挂字幕",
+  "addExternalSubtitle": "添加外挂字幕",
+  "subtitleLanguageHint": "语言，如 chi",
+  "subtitleTitleHint": "标题",
+  "subtitleOutputHint": "取消勾选会删除该字幕轨。字幕会写入当前任务的输出。",
+  "container": "容器",
+  "webmSubtitleWarning": "WebM 只保留 WebVTT 文本字幕，样式会丢失。",
+  "mp4AssWarning": "MP4/MOV 不能保留 ASS 样式，建议改存为 MKV。",
+  "mp4TextWarning": "MP4/MOV 会把文本字幕转成 mov_text，样式会丢失。",
+  "trackIndex": "轨道 {index}",
+  "@trackIndex": {
+    "placeholders": {
+      "index": {"type": "int"}
+    }
+  },
+  "subtitleDefault": "默认",
+  "subtitleForced": "强制",
+  "subtitleDeleteOnly": "仅可删除",
+  "errorFfmpegNotFound": "未找到 ffmpeg",
+  "errorFfmpegNotFoundSpecify": "未找到 ffmpeg，请在设置中指定路径",
+  "errorFfmpegFoundFrom": "已从{source}找到 ffmpeg",
+  "@errorFfmpegFoundFrom": {
+    "placeholders": {
+      "source": {"type": "String"}
+    }
+  },
+  "errorFfmpegInvalidPath": "指定的路径无效，无法运行 ffmpeg",
+  "errorFfmpegUsingSpecified": "已使用指定的 ffmpeg",
+  "errorCancelled": "已取消",
+  "errorConversionFailed": "转换失败",
+  "errorCannotStartFfmpeg": "无法启动 ffmpeg：{error}",
+  "@errorCannotStartFfmpeg": {
+    "placeholders": {
+      "error": {"type": "String"}
+    }
+  },
+  "errorFfmpegExitCode": "ffmpeg 退出码 {code}",
+  "@errorFfmpegExitCode": {
+    "placeholders": {
+      "code": {"type": "int"}
+    }
+  },
+  "errorFfprobeNotFound": "未找到 ffprobe",
+  "errorCannotReadMedia": "无法读取媒体信息",
+  "errorEncoderInitFailed": "编码器初始化失败",
+  "errorEncoderUnsupported": "当前系统不支持{vendor}编码器",
+  "@errorEncoderUnsupported": {
+    "placeholders": {
+      "vendor": {"type": "String"}
+    }
+  },
+  "errorEncoderNotCompiled": "当前 ffmpeg 没有编入{vendor}编码器",
+  "@errorEncoderNotCompiled": {
+    "placeholders": {
+      "vendor": {"type": "String"}
+    }
+  },
+  "errorEncoderCheckFailed": "无法检查{vendor}编码器：{error}",
+  "@errorEncoderCheckFailed": {
+    "placeholders": {
+      "vendor": {"type": "String"},
+      "error": {"type": "String"}
+    }
+  },
+  "errorEncoderCanInit": "{vendor}编码器可以初始化",
+  "errorUnsupportedSourceVideoCodec": "无法按源视频编码（{codec}）重新编码",
+  "@errorUnsupportedSourceVideoCodec": {
+    "placeholders": {
+      "codec": {"type": "String"}
+    }
+  },
+  "errorUnsupportedSourceAudioCodec": "无法按源音频编码（{codec}）重新编码",
+  "@errorUnsupportedSourceAudioCodec": {
+    "placeholders": {
+      "codec": {"type": "String"}
+    }
+  },
+  "@errorEncoderCanInit": {
+    "placeholders": {
+      "vendor": {"type": "String"}
+    }
+  },
+  "ffmpegSourceSettingsPath": "设置中指定的路径",
+  "ffmpegSourceManual": "手动指定",
+  "ffmpegSourceSystemPath": "系统 PATH",
+  "ffmpegSourceAppDirFfmpeg": "程序目录 ffmpeg",
+  "ffmpegSourceAppDirFfmpegBin": "程序目录 ffmpeg/bin",
+  "ffmpegSourceAppDirBin": "程序目录 bin",
+  "ffmpegSourceAppDir": "程序目录",
+  "crfFollowsQuality": "CRF（空则跟随质量档）",
+  "lockedMobileProfile": "FLV 和 3GP 固定使用 Baseline / Level 3.0。",
+  "channelCount": "{count} 声道",
+  "@channelCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  }
+}
