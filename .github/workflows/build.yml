@@ -50,7 +50,6 @@ jobs:
     if: ${{ !cancelled() && (needs.checks.result == 'success' || needs.checks.result == 'skipped') }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 90
-    continue-on-error: ${{ matrix.experimental }}
     defaults:
       run:
         shell: bash
@@ -64,35 +63,18 @@ jobs:
             artifact: ffmpeg_ui-windows-x64
             ext: zip
             source_path: build/windows/x64/runner/Release
-            experimental: false
-          - os: windows-11-arm
-            platform: windows
-            arch: arm64
-            artifact: ffmpeg_ui-windows-arm64
-            ext: zip
-            source_path: build/windows/arm64/runner/Release
-            experimental: true
           - os: ubuntu-24.04
             platform: linux
             arch: x64
             artifact: ffmpeg_ui-linux-x64
             ext: tar.gz
             source_path: build/linux/x64/release/bundle
-            experimental: false
-          - os: ubuntu-24.04-arm
-            platform: linux
-            arch: arm64
-            artifact: ffmpeg_ui-linux-arm64
-            ext: tar.gz
-            source_path: build/linux/arm64/release/bundle
-            experimental: true
           - os: macos-latest
             platform: macos
             arch: universal
             artifact: ffmpeg_ui-macos-universal
             ext: zip
             source_path: 'build/macos/Build/Products/Release/Media Format Converter.app'
-            experimental: false
     steps:
       - name: Checkout
         uses: actions/checkout@v6
