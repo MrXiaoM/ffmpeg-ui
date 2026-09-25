@@ -287,6 +287,7 @@ String? resolveFfprobePath({
   required bool Function(String path) exists,
   required String Function(String path) absolutePath,
 }) {
+  final context = pathSeparator == ';' ? p.windows : p.posix;
   final seen = <String>{};
   bool tryAdd(String candidate) {
     final normalized = candidate.trim();
@@ -299,7 +300,7 @@ String? resolveFfprobePath({
     return true;
   }
 
-  final local = p.join(p.dirname(ffmpegPath), ffprobeName);
+  final local = context.join(context.dirname(ffmpegPath), ffprobeName);
   if (tryAdd(local)) {
     return absolutePath(local);
   }
@@ -308,7 +309,7 @@ String? resolveFfprobePath({
     if (trimmed.isEmpty) {
       continue;
     }
-    final candidate = p.join(trimmed, ffprobeName);
+    final candidate = context.join(trimmed, ffprobeName);
     if (tryAdd(candidate)) {
       return absolutePath(candidate);
     }

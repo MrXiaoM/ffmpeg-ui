@@ -150,26 +150,27 @@ void main() {
   });
 
   test('output name template replaces {name} and fills the extension', () {
+    final inputPath = p.join('in', 'demo.mov');
     expect(
       applyOutputNameTemplate(
         '{name}_converted',
-        r'C:\in\demo.mov',
+        inputPath,
         extension: '.mp4',
       ),
       'demo_converted.mp4',
     );
     expect(
-      applyOutputNameTemplate('', r'C:\in\demo.mov', extension: '.mp4'),
+      applyOutputNameTemplate('', inputPath, extension: '.mp4'),
       'demo_converted.mp4',
     );
     expect(
-      applyOutputNameTemplate('shared', r'C:\in\demo.mov', extension: '.mp4'),
+      applyOutputNameTemplate('shared', inputPath, extension: '.mp4'),
       'shared.mp4',
     );
     expect(
       applyOutputNameTemplate(
         'demo_converted.mov',
-        r'C:\in\demo.mov',
+        inputPath,
         extension: '.mp4',
       ),
       'demo_converted.mp4',
