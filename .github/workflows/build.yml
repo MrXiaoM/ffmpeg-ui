@@ -222,7 +222,7 @@ jobs:
           SOURCE_PATH: ${{ matrix.source_path }}
         run: |
           set -euo pipefail
-          bundle="dist/ffmpeg_ui-bundle-windows-x64.zip"
+          bundle="dist/ffmpeg_ui-bundle-windows-x64.7z"
           staging="dist/bundle-staging"
           extract="dist/ffmpeg-extract"
           archive="dist/ffmpeg-release-essentials.7z"
@@ -240,7 +240,7 @@ jobs:
           elif command -v 7z >/dev/null 2>&1; then
             sevenz=7z
           else
-            echo "7-Zip is required to extract ffmpeg-release-essentials.7z"
+            echo "7-Zip is required to pack ffmpeg_ui-bundle-windows-x64.7z"
             exit 1
           fi
 
@@ -267,7 +267,11 @@ jobs:
             exit 1
           fi
 
-          tar.exe -a -cf "$bundle" -C "$staging" .
+          bundle_abs="$(pwd)/$bundle"
+          (
+            cd "$staging"
+            "$sevenz" a -t7z -mx=9 "$bundle_abs" .
+          )
           ls -lh "$bundle"
 
       - name: Upload artifact
@@ -283,7 +287,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: ffmpeg_ui-bundle-windows-x64
-          path: dist/ffmpeg_ui-bundle-windows-x64.zip
+          path: dist/ffmpeg_ui-bundle-windows-x64.7z
           if-no-files-found: error
 
       - name: Prepare release assets
@@ -305,7 +309,7 @@ jobs:
           cp "dist/${ARTIFACT}.${EXT}" \
             "dist/release-assets/ffmpeg_ui-${version}-${ARTIFACT#ffmpeg_ui-}.${EXT}"
           if [ "$PLATFORM" = "windows" ] && [ "$ARCH" = "x64" ]; then
-            cp dist/ffmpeg_ui-bundle-windows-x64.zip dist/release-assets/
+            cp dist/ffmpeg_ui-bundle-windows-x64.7z dist/release-assets/
           fi
 
       - name: Upload to GitHub Release
